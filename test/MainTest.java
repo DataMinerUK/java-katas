@@ -20,16 +20,41 @@ public class MainTest {
         main = new Main();
     }
     @Test
-    public void shouldDrawStar() {
+    public void drawStarShouldDrawASingleStar() {
 
         main.drawStar();
         assertEquals("*", outputStream.toString());
     }
 
-    public void shouldDrawHorizontalLine() {
+    @Test
+    public void drawHorizontalLineShouldDrawLineOfNStars() {
 
         main.drawHorizontalLine(8);
         assertEquals("********", outputStream.toString());
 
+        outputStream.reset();
+        main.drawHorizontalLine(9);
+        assertEquals("*********", outputStream.toString());
+
+    }
+
+    @Test
+    public void drawVerticalLineShouldDrawLineOfNStars() {
+
+        main.drawVerticalLine(3);
+        assertEquals("*\n*\n*\n", outputStream.toString());
+    }
+
+    @Test
+    public void drawRightTriangleShouldDrawATriangleToTheRightOfHeightN(){
+
+        main.drawRightTriangle(3);
+        assertEquals("*\n**\n***\n", outputStream.toString());
+    }
+
+    @Test
+    public void drawIsoscelesTriangleShouldDrawAnIsoscelesTriangleOfHeightN(){
+        main.drawIsoscelesTriangle(3);
+        assertEquals("  *  \n *** \n*****\n", outputStream.toString());
     }
 }
