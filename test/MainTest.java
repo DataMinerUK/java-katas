@@ -57,4 +57,10 @@ public class MainTest {
         main.drawIsoscelesTriangle(3);
         assertEquals("  *  \n *** \n*****\n", outputStream.toString());
     }
+
+    @Test
+    public void drawDiamondShouldDrawADiamondOfHeightN(){
+        main.drawDiamond(3);
+        assertEquals("  *  \n *** \n*****\n *** \n  *  \n", outputStream.toString());
+    }
 }
