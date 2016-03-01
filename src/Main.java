@@ -1,6 +1,10 @@
 public class Main {
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+    public void drawStar() {
+        System.out.print("*");
+    }
+
+    public void drawHorizontalLine(int i) {
+        System.out.print("********");
     }
 }
