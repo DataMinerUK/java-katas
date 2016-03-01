@@ -63,4 +63,10 @@ public class MainTest {
         main.drawDiamond(3);
         assertEquals("  *  \n *** \n*****\n *** \n  *  \n", outputStream.toString());
     }
+
+    @Test
+    public void drawDiamondWithNameShouldDrawADiamondOfHeightNWithNameAtCentre(){
+        main.drawDiamondWithName(3, "Nicola");
+        assertEquals("  *  \n *** \nNicola\n *** \n  *  \n", outputStream.toString());
+    }
 }

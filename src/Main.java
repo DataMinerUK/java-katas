@@ -36,9 +36,24 @@ public class Main {
 
     }
 
+    public void drawDiamondWithName(int height, String name) {
+        drawUpperDiamond(height-1);
+        System.out.println(name);
+        drawLowerDiamond(height-1);
+    }
+
     private void drawLowerDiamond(int height) {
         int base = (2 * height) -1;
         for(int i = height; i >= 1; i--){
+            int numberToDrawOnCurrentLine = (2 * i) - 1;
+            int numberOfSpacesToPad = (base - numberToDrawOnCurrentLine + 2)/2;
+            printLineWithPadding(numberOfSpacesToPad, numberToDrawOnCurrentLine);
+        }
+    }
+
+    private void drawUpperDiamond(int height) {
+        int base = (2 * height) -1;
+        for(int i = 1; i <= height; i++){
             int numberToDrawOnCurrentLine = (2 * i) - 1;
             int numberOfSpacesToPad = (base - numberToDrawOnCurrentLine + 2)/2;
             printLineWithPadding(numberOfSpacesToPad, numberToDrawOnCurrentLine);
